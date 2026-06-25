@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Desert Rose Capital — Systematic CME-Futures Trading Firm</title>
+  <meta name="description" content="Desert Rose Capital is a systematic CME-futures trading firm built and run by two quantitative researchers. Trading live on CME Globex via Interactive Brokers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://desertrose.capital/">
+
+  <!-- Favicon: terracotta monogram -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a5b41'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Georgia,serif' font-weight='500' fill='%23F6F2EA' text-anchor='middle'%3EDR%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Desert Rose Capital — Systematic CME-Futures Trading Firm">
+  <meta property="og:description" content="A systematic CME-futures trading firm, built and run by two quantitative researchers. Trading live on CME Globex via Interactive Brokers.">
+  <meta property="og:url" content="https://desertrose.capital/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Structured data: helps Google render a richer, more credible result -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Desert Rose Capital",
+    "description": "Systematic CME-futures trading firm built and run by two quantitative researchers.",
+    "url": "https://desertrose.capital/",
+    "email": "info@desertrose.capital",
+    "foundingDate": "2025",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Amsterdam",
+      "addressCountry": "NL"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:        #F6F2EA;
+      --ink:       #1C1814;
+      --ink-2:     #23201A;
+      --muted:     #6B6359;
+      --faint:     #736B5F;
+      --line:      rgba(28,24,20,0.13);
+      --accent-2:  oklch(0.50 0.11 40);
+      --dot:       oklch(0.60 0.10 40);
+    }
+    @supports not (color: oklch(0.5 0.1 40)) {
+      :root { --accent-2:#8a5b41; --dot:#a87455; }
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+    body {
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      font-feature-settings:"liga" 1, "kern" 1;
+    }
+    a { color:inherit; }
+    ::selection { background:rgba(138,91,65,0.18); color:var(--ink); }
+    :focus-visible { outline:2px solid var(--dot); outline-offset:2px; }
+
+    /* ---- live status badge (top-right corner) ---- */
+    .badge {
+      position:fixed; top:22px; right:24px; z-index:10;
+      display:inline-flex; align-items:center; gap:9px;
+      border:1px solid rgba(28,24,20,0.16); border-radius:999px;
+      background:rgba(246,242,234,0.82);
+      -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+      padding:7px 14px;
+      font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; color:#3a342d;
+    }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--dot); animation:pulse 3.6s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.55; transform:scale(0.84); } }
+    @media (prefers-reduced-motion: reduce) { .dot { animation:none; } }
+
+    .wrap {
+      min-height:100vh;
+      max-width:680px;
+      margin:0 auto;
+      padding:88px clamp(24px, 6vw, 40px) 48px;
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    /* ---- hero (one centered composition) ---- */
+    .hero {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    .brand {
+      font-family:'Spectral', serif; font-weight:500;
+      font-size:clamp(36px, 8vw, 56px); letter-spacing:-0.02em; line-height:1.0;
+      text-wrap:balance;
+    }
+    .tagline {
+      margin-top:18px; font-size:12px; font-weight:600;
+      letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
+    }
+    .accent-rule {
+      width:40px; height:2px; margin:28px auto 0;
+      background:var(--accent-2); border-radius:2px; opacity:0.9;
+    }
+    .statement {
+      font-family:'Spectral', serif; font-weight:400;
+      font-size:clamp(19px, 2.6vw, 23px); line-height:1.5; letter-spacing:-0.003em;
+      color:var(--ink-2); text-wrap:balance;
+      max-width:30ch; margin:28px auto 0;
+    }
+
+    /* ---- contact ---- */
+    .contact { margin-top:52px; }
+    .contact-label {
+      font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
+      text-transform:uppercase; color:var(--muted); margin-bottom:16px;
+    }
+    .email-link {
+      font-family:'Spectral', serif; font-weight:400;
+      font-size:clamp(21px, 3vw, 26px); color:var(--ink);
+      text-decoration:none; border-bottom:1px solid var(--dot); padding-bottom:3px;
+      transition:color 0.15s ease;
+    }
+    .email-link:hover { color:var(--accent-2); }
+    .contact-sub { font-size:13px; color:var(--muted); margin-top:18px; line-height:1.6; }
+
+    /* ---- footer ---- */
+    .foot {
+      margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+      display:flex; flex-direction:column; gap:8px; align-items:center;
+    }
+    .disclaimer { font-size:12px; line-height:1.55; color:var(--muted); max-width:560px; }
+    .colophon { font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--faint); }
+
+    @media (max-width: 600px) {
+      .badge { top:16px; right:16px; }
+      .wrap { padding-top:80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="badge"><span class="dot" aria-hidden="true"></span><span>LIVE · CME GLOBEX</span></div>
+
+  <div class="wrap">
+
+    <main class="hero">
+      <h1 class="brand">Desert Rose Capital</h1>
+      <div class="tagline">A systematic CME-futures trading firm</div>
+      <div class="accent-rule" aria-hidden="true"></div>
+
+      <p class="statement">Built and run by two quantitative researchers — multiple uncorrelated systematic strategies, engineered and traded end to end, live on CME Globex via Interactive Brokers.</p>
+
+      <div class="contact">
+        <div class="contact-label">Contact</div>
+        <a class="email-link" href="mailto:info@desertrose.capital">info@desertrose.capital</a>
+        <div class="contact-sub">Introductions and inquiries from allocators and connectors.</div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="disclaimer">For informational purposes only. Not an offer or solicitation to buy or sell any security or to participate in any trading strategy.</div>
+      <div class="colophon">Amsterdam, Netherlands &nbsp;·&nbsp; © 2026 Desert Rose Capital</div>
+    </footer>
+
+  </div>
+</body>
+</html>
