@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Desert Rose Capital — Systematic CME-Futures Trading Firm</title>
-  <meta name="description" content="Desert Rose Capital is a systematic CME-futures trading firm built and run by two quantitative researchers. Trading live on CME Globex via Interactive Brokers.">
+  <title>Desert Rose Capital — Quantitative Investment Firm</title>
+  <meta name="description" content="Desert Rose Capital is a quantitative investment firm founded by former researchers and developers, applying mathematical and statistical methods to investing in global financial markets. Trading live on CME Globex via Interactive Brokers.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://desertrose.capital/">
 
@@ -14,8 +14,8 @@
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Desert Rose Capital — Systematic CME-Futures Trading Firm">
-  <meta property="og:description" content="A systematic CME-futures trading firm, built and run by two quantitative researchers. Trading live on CME Globex via Interactive Brokers.">
+  <meta property="og:title" content="Desert Rose Capital — Quantitative Investment Firm">
+  <meta property="og:description" content="A quantitative investment firm applying mathematical and statistical methods to investing in global financial markets.">
   <meta property="og:url" content="https://desertrose.capital/">
   <meta name="twitter:card" content="summary">
 
@@ -25,10 +25,10 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Desert Rose Capital",
-    "description": "Systematic CME-futures trading firm built and run by two quantitative researchers.",
+    "description": "Quantitative investment firm applying mathematical and statistical methods to investing in global financial markets.",
     "url": "https://desertrose.capital/",
     "email": "info@desertrose.capital",
-    "foundingDate": "2025",
+    "foundingDate": "2024",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Amsterdam",
@@ -46,9 +46,7 @@
     :root {
       --bg:        #F6F2EA;
       --ink:       #1C1814;
-      --ink-2:     #23201A;
       --muted:     #6B6359;
-      --faint:     #736B5F;
       --line:      rgba(28,24,20,0.13);
       --accent-2:  oklch(0.50 0.11 40);
       --dot:       oklch(0.60 0.10 40);
@@ -87,10 +85,11 @@
     @media (prefers-reduced-motion: reduce) { .dot { animation:none; } }
 
     .wrap {
-      min-height:100vh;
+      height:100vh;
+      height:100dvh;
       max-width:680px;
       margin:0 auto;
-      padding:88px clamp(24px, 6vw, 40px) 48px;
+      padding:52px clamp(24px, 6vw, 40px) 36px;
       display:flex;
       flex-direction:column;
       text-align:center;
@@ -98,6 +97,12 @@
 
     /* ---- hero (one centered composition) ---- */
     .hero {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .identity {
       flex:1;
       display:flex;
       flex-direction:column;
@@ -114,42 +119,85 @@
       letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
     }
     .accent-rule {
-      width:40px; height:2px; margin:28px auto 0;
+      width:40px; height:2px; margin:26px auto 0;
       background:var(--accent-2); border-radius:2px; opacity:0.9;
     }
     .statement {
       font-family:'Spectral', serif; font-weight:400;
-      font-size:clamp(19px, 2.6vw, 23px); line-height:1.5; letter-spacing:-0.003em;
-      color:var(--ink-2); text-wrap:balance;
-      max-width:30ch; margin:28px auto 0;
+      font-size:clamp(18px, 2.3vw, 21px); line-height:1.58;
+      color:var(--ink); text-wrap:balance;
+      max-width:48ch; margin:24px auto 0;
     }
 
-    /* ---- contact ---- */
-    .contact { margin-top:52px; }
+    /* ---- contact form (line-ruled, old-school) ---- */
+    .contact { margin:0 auto; width:100%; max-width:430px; }
     .contact-label {
       font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
-      text-transform:uppercase; color:var(--muted); margin-bottom:16px;
+      text-transform:uppercase; color:var(--muted); margin-bottom:22px;
     }
-    .email-link {
-      font-family:'Spectral', serif; font-weight:400;
-      font-size:clamp(21px, 3vw, 26px); color:var(--ink);
-      text-decoration:none; border-bottom:1px solid var(--dot); padding-bottom:3px;
-      transition:color 0.15s ease;
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+    .form-field { text-align:left; }
+    .form-field--msg { margin-top:18px; }
+    .form-field input,
+    .form-field textarea {
+      width:100%; font-family:'Hanken Grotesk', -apple-system, sans-serif;
+      font-size:15px; line-height:1.5; color:var(--ink);
+      background:transparent; border:none;
+      border-bottom:1px solid rgba(28,24,20,0.28); border-radius:0;
+      padding:7px 1px; transition:border-color 0.15s ease;
     }
-    .email-link:hover { color:var(--accent-2); }
-    .contact-sub { font-size:13px; color:var(--muted); margin-top:18px; line-height:1.6; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color:var(--muted); }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      outline:none; border-bottom-color:var(--dot);
+    }
+    .form-field textarea { resize:none; min-height:150px; }
+    .hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+    .submit-row { display:flex; justify-content:center; margin-top:26px; }
+    .submit-btn {
+      cursor:pointer;
+      font-family:'IBM Plex Mono', monospace; font-size:12px;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--bg); background:var(--accent-2);
+      background:color-mix(in oklab, var(--accent-2) 90%, var(--bg));
+      border:none; border-radius:4px; padding:13px 32px;
+      transition:opacity 0.15s ease;
+    }
+    .submit-btn:hover { opacity:0.88; }
+    .submit-btn:disabled { opacity:0.5; cursor:default; }
+    .form-status {
+      margin-top:14px; font-size:13px; line-height:1.5;
+      color:var(--muted); min-height:1.2em; text-align:center;
+    }
+    .form-status.error { color:var(--accent-2); }
 
     /* ---- footer ---- */
     .foot {
-      margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
-      display:flex; flex-direction:column; gap:8px; align-items:center;
+      margin-top:auto; padding-top:18px; border-top:1px solid var(--line);
+      display:flex; flex-direction:row; justify-content:space-between; align-items:center;
+      gap:16px; width:100%;
     }
-    .disclaimer { font-size:12px; line-height:1.55; color:var(--muted); max-width:560px; }
-    .colophon { font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--faint); }
+    .foot-email {
+      font-family:'Spectral', serif; font-size:15px; color:var(--ink);
+      text-decoration:none; border-bottom:1px solid var(--dot); padding-bottom:1px;
+      transition:color 0.15s ease; white-space:nowrap;
+    }
+    .foot-email:hover { color:var(--accent-2); }
+    .foot-meta {
+      font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em;
+      color:var(--muted); line-height:1.5; white-space:nowrap;
+    }
 
     @media (max-width: 600px) {
       .badge { top:16px; right:16px; }
-      .wrap { padding-top:80px; }
+      .wrap { padding-top:64px; }
+      .foot { display:flex; flex-direction:column; gap:9px; text-align:center; }
+      .foot-email, .foot-meta { text-align:center; }
+    }
+    /* safety net: if the viewport is too short to fit everything, allow scroll instead of clipping */
+    @media (max-width: 600px), (max-height: 660px) {
+      .wrap { height:auto; min-height:100vh; min-height:100dvh; }
     }
   </style>
 </head>
@@ -160,24 +208,98 @@
   <div class="wrap">
 
     <main class="hero">
+      <div class="identity">
       <h1 class="brand">Desert Rose Capital</h1>
-      <div class="tagline">A systematic CME-futures trading firm</div>
       <div class="accent-rule" aria-hidden="true"></div>
 
-      <p class="statement">Built and run by two quantitative researchers — multiple uncorrelated systematic strategies, engineered and traded end to end, live on CME Globex via Interactive Brokers.</p>
+      <p class="statement">Desert Rose is a quantitative investment firm, founded by former researchers and developers — applying mathematical and statistical methods to investing in global financial markets.</p>
+
+      </div>
 
       <div class="contact">
-        <div class="contact-label">Contact</div>
-        <a class="email-link" href="mailto:info@desertrose.capital">info@desertrose.capital</a>
-        <div class="contact-sub">Introductions and inquiries from allocators and connectors.</div>
+        <div class="contact-label">Get in touch</div>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <input id="f-name" type="text" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <input id="f-email" type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+            </div>
+          </div>
+          <!-- honeypot: bots fill this; humans never see it -->
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="submit-row">
+            <button type="submit" class="submit-btn">Send</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </main>
 
     <footer class="foot">
-      <div class="disclaimer">For informational purposes only. Not an offer or solicitation to buy or sell any security or to participate in any trading strategy.</div>
-      <div class="colophon">Amsterdam, Netherlands &nbsp;·&nbsp; © 2026 Desert Rose Capital</div>
+      <div class="foot-meta">Founded in Amsterdam, 2024</div>
+      <a class="foot-email" href="mailto:info@desertrose.capital">info@desertrose.capital</a>
     </footer>
 
   </div>
+
+  <script>
+    (function () {
+      // Paste your free access key from https://web3forms.com (tied to info@desertrose.capital):
+      var ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
+      var form   = document.getElementById("contact-form");
+      var status = document.getElementById("form-status");
+      var btn    = form.querySelector(".submit-btn");
+      var val    = function (n) { return form.querySelector('[name="' + n + '"]'); };
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        status.className = "form-status";
+
+        if (ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY") {
+          status.className = "form-status error";
+          status.textContent = "Form not configured yet — please email us directly.";
+          return;
+        }
+
+        var payload = {
+          access_key: ACCESS_KEY,
+          subject: "New enquiry — desertrose.capital",
+          from_name: "Desert Rose website",
+          name:    val("name").value,
+          email:   val("email").value,
+          message: "Enquiry via desertrose.capital",
+          botcheck: val("botcheck").checked
+        };
+
+        btn.disabled = true;
+        status.textContent = "Sending…";
+
+        fetch("https://api.web3forms.com/submit", {
+          method:  "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body:    JSON.stringify(payload)
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res.success) {
+              form.reset();
+              status.textContent = "Thanks — we'll be in touch shortly.";
+            } else {
+              status.className = "form-status error";
+              status.textContent = res.message || "Something went wrong — please email us directly.";
+            }
+          })
+          .catch(function () {
+            status.className = "form-status error";
+            status.textContent = "Something went wrong — please email us directly.";
+          })
+          .finally(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
+
 </body>
 </html>
